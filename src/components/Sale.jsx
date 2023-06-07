@@ -41,8 +41,9 @@ const Sale = () => {
   const [products, setProducts] = useState(featuredProducts);
 
   return (
-    <div className='mt-20 px-12'>
-      <h1 className='text-4xl font-bold mt-8 mb-12 text-center'>Sale</h1>
+    <div className='mt-10 px-12 '>
+      <h1 className='text-4xl font-bold mt-2 mb-2 text-center'>Sale</h1>
+      <div className='mt-4 border-2 rounded-lg border-gray-800 w-20 mb-12 mx-auto'></div>
       <div className='flex justify-between flex-wrap px-1'>
         {products.map((product) => (
           <ProductCard product={product} />

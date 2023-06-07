@@ -12,15 +12,15 @@ import { Link } from 'react-router-dom';
 export default function ProductCard(props) {
   const { product } = props;
   return (
-    <Link
-      to={`/product-description/${product.id}`}
-      key={product.id}
-      state={{ product }}
-    >
-      <>
-        <Card
+    <>
+      <Card
+        key={product.id}
+        className='mb-10 border-gray-500 w-full sm:w-[22rem]  h-full cursor-pointer rounded-none shadow-l bg-white'
+      >
+        <Link
+          to={`/product-description/${product.id}`}
           key={product.id}
-          className='mt-2 w-[22rem] h-full cursor-pointer rounded-none shadow-l bg-white'
+          state={{ product }}
         >
           <CardHeader
             shadow={false}
@@ -29,13 +29,13 @@ export default function ProductCard(props) {
           >
             <img
               src={product.image}
-              className='w-full h-full object-cover m-0 p-0  transform transition-transform duration-1000 hover:scale-105'
+              className='w-full h-full object-cover m-0 p-0 transform transition-transform duration-1000 hover:scale-105'
               alt='Product'
               loading='lazy'
             />
           </CardHeader>
           <CardBody>
-            <div className='flex flex-col items-center justify-between  mt-3'>
+            <div className='flex flex-col items-center justify-between mt-3'>
               <Typography
                 color='blue-gray'
                 className='text-center text-lg font-semibold'
@@ -48,8 +48,8 @@ export default function ProductCard(props) {
               </Typography>
             </div>
           </CardBody>
-        </Card>
-      </>
-    </Link>
+        </Link>
+      </Card>
+    </>
   );
 }
