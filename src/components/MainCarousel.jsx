@@ -1,5 +1,6 @@
 import { Carousel, Typography } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function MainCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);

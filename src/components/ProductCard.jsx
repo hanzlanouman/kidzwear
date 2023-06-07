@@ -5,6 +5,7 @@ import {
   Typography,
   Button,
   CardFooter,
+  Rating,
 } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
 
@@ -30,6 +31,7 @@ export default function ProductCard(props) {
               src={product.image}
               className='w-full h-full object-cover m-0 p-0  transform transition-transform duration-1000 hover:scale-105'
               alt='Product'
+              loading='lazy'
             />
           </CardHeader>
           <CardBody>
@@ -40,6 +42,7 @@ export default function ProductCard(props) {
               >
                 {product.name}
               </Typography>
+              <Rating value={4} readonly className='' />
               <Typography color='red' className='text-center font-bold'>
                 ${product.price.toFixed(2)}
               </Typography>

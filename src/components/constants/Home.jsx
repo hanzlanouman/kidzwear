@@ -1,8 +1,8 @@
 import React from 'react';
-import MainCarousel from './MainCarousel';
-import Featured from './Featured';
-import OurCollections from './OurCollections';
-import Sale from './Sale';
+import MainCarousel from '../MainCarousel';
+import Featured from '../Featured';
+import OurCollections from '../OurCollections';
+import Sale from '../Sale';
 
 const Home = () => {
   return (

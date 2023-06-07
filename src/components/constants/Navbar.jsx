@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../resources/logo.png';
+import Cart from '../cart/cart';
+import CartIcon from '../cart/cartIcon';
 
 const Navbar = () => {
   return (
@@ -13,24 +15,25 @@ const Navbar = () => {
           Home
         </Link>
         <Link
+          to='/products'
+          className='px-10 py-4 hover:bg-gray-400 transition-colors duration-300'
+        >
+          Products
+        </Link>
+        <Link
           to='/featured'
           className='px-10 py-4 hover:bg-gray-400 transition-colors duration-300'
         >
           Featured
         </Link>
         <Link
-          to='/featured'
-          className='px-10 py-4 hover:bg-gray-400 transition-colors duration-300'
-        >
-          Collection
-        </Link>
-        <Link
-          to='/'
+          to='/contact-us'
           className='px-10 py-4 hover:bg-gray-400 transition-colors duration-300'
         >
           Contact Us
         </Link>
       </div>
+      <CartIcon />
     </div>
   );
 };

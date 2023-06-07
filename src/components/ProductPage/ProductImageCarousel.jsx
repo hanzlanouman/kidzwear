@@ -1,14 +1,10 @@
 import { Carousel, Typography } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
 
-export default function ProductImageCarousel() {
+export default function ProductImageCarousel(props) {
+  const { image } = props;
   const [activeIndex, setActiveIndex] = useState(0);
-  const images = [
-    // Use picsum 4k links
-    'https://picsum.photos/1900/1000',
-    'https://picsum.photos/1900/1000',
-    'https://picsum.photos/1900/1000',
-  ];
+  const images = [image, image, image, image, image];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
