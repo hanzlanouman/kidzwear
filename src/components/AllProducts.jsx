@@ -4,7 +4,7 @@ import { ProductContext } from '../contexts/Product.context';
 import ProductCard from './ProductCard';
 import { useLocation } from 'react-router-dom';
 
-const ProductPage = () => {
+const AllProducts = () => {
   const location = useLocation();
   let { page } = location.state || {};
   const { product } = useContext(ProductContext);
@@ -14,18 +14,15 @@ const ProductPage = () => {
   }
 
   return (
-    <div>
+    <div className='mb-20'>
       <h1 className='text-4xl font-semibold text-center my-14'>{page}</h1>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-20 px-0 pb-20 mb-20'>
-        {product.map(
-          (product) =>
-            product.collection === page && (
-              <ProductCard key={product.id} product={product} />
-            )
-        )}
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-20 px-0'>
+        {product.map((item) => (
+          <ProductCard key={item.id} product={item} />
+        ))}
       </div>
     </div>
   );
 };
 
-export default ProductPage;
+export default AllProducts;

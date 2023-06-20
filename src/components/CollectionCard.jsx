@@ -1,8 +1,10 @@
 import React from 'react';
 import { Card, CardHeader } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
+import collection1 from '../products/kidsCollection1.jpg';
+import collection2 from '../products/kidsCollection2.webp';
 const CollectionCard = (props) => {
-  const { collections } = props;
+  const collections = [collection1, collection2];
 
   return (
     <>
@@ -15,7 +17,7 @@ const CollectionCard = (props) => {
               className='h-[30rem] m-0 p-0 rounded-none'
             >
               <img
-                src={collection.img}
+                src={collection}
                 className='w-full h-full object-cover m-0 p-0 transform transition-transform duration-1000 hover:scale-105'
                 alt='Product'
               />

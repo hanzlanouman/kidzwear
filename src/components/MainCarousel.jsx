@@ -1,14 +1,11 @@
 import { Carousel, Typography } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import carImage from '../products/kidsCollection1.jpg';
 
 export default function MainCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const images = [
-    'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80',
-    'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
-    'https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80',
-  ];
+  const images = [carImage, carImage, carImage];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -18,11 +15,11 @@ export default function MainCarousel() {
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [images.length]);
 
   return (
     <Carousel
-      className='h-[35rem] relative'
+      className='h-[40rem] relative'
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className='absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2'>
           {new Array(length).fill('').map((_, i) => (
@@ -43,7 +40,7 @@ export default function MainCarousel() {
         <img
           key={index}
           src={imageUrl}
-          alt={`image ${index + 1}`}
+          alt='Product here'
           className='h-full w-full object-cover'
         />
       ))}

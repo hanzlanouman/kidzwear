@@ -1,19 +1,29 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../contexts/Cart.context';
+import CartItems from './cart/cartItems';
+import { Button } from '@material-tailwind/react';
+import { useNavigate } from 'react-router-dom';
+import CartBody from './cart/cartBody';
+
 const CheckOut = () => {
-  const { cart, setCart, cartTotal, setTotal } = useContext(CartContext);
+  const { cart, cartTotal } = useContext(CartContext);
+  const navigate = useNavigate();
+
   return (
     <div>
-      {cart.map((item) => (
-        <div key={item.id}>
-          <h1>{item.name}</h1>
-          <img src={item.image} alt={item.name} width='200px' />
-          <span>{item.qty}</span>
-          <br />
-        </div>
-      ))}
-      <h2>{cartTotal}</h2>
+      <div className='my-10 px-14 m-auto'>
+        <h1 className='text-2xl font-semibold mt-4'>Checkout</h1>
+        <h2 className='text-xl font-bold my-5'>Your Cart</h2>
+        <CartItems />
+      </div>
+      <div className='flex justify-end px-14 m-auto'>
+        <Button
+          className='py-4 w-[10rem] rounded-none bg-gray-900'
+          onClick={() => navigate('/payment')}
+        >
+          Proceed to pay
+        </Button>
+      </div>
     </div>
   );
 };

@@ -5,24 +5,13 @@ import { Link } from 'react-router-dom';
 import CollectionCard from './CollectionCard';
 
 const OurCollections = () => {
-  const [collections, setCollections] = useState([
-    {
-      img: 'https://picsum.photos/1900/1000',
-      name: 'collection1',
-    },
-    {
-      img: 'https://picsum.photos/1900/1000',
-      name: 'collection2',
-    },
-  ]);
-
   return (
     <Link to='/products' state={{ page: 'collection1' }}>
       <div className='mt-20 px-10'>
         <h1 className='text-4xl font-bold mt-8 text-center'>Our Collections</h1>
         <div className='mt-4 border-2 rounded-lg border-gray-800 w-[13rem] mb-12 mx-auto'></div>
         <div className='flex flex-col sm:flex-row justify-center mx-0 px-0'>
-          <CollectionCard collections={collections} />
+          <CollectionCard />
         </div>
       </div>
     </Link>

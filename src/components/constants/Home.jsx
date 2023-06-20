@@ -6,7 +6,7 @@ import Sale from '../Sale';
 
 const Home = () => {
   return (
-    <div className=''>
+    <div className='mb-10'>
       <MainCarousel />
       <OurCollections />
       <Featured />

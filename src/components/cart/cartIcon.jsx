@@ -7,8 +7,8 @@ import { CartContext } from '../../contexts/Cart.context';
 const CartIcon = () => {
   const { qty } = useContext(CartContext);
   return (
-    <Link to='/cart' className='ml-20 text-center'>
-      <div>
+    <Link to='/cart' className='text-center'>
+      <div className=''>
         {
           <div className='rounded-full text-white w-8 h-8 text-center flex items-center justify-center'>
             <FontAwesomeIcon

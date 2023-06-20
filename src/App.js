@@ -11,6 +11,12 @@ import Cart from './components/cart/cart';
 import Featured from './components/Featured';
 import ContactUs from './components/forms/ContactUs';
 import CheckOut from './components/CheckOut';
+import AllProducts from './components/AllProducts';
+import Payment from './components/forms/payment';
+import CartBody from './components/cart/cartBody';
+import Logo from './components/constants/Logo';
+import { Navbar } from '@material-tailwind/react';
+import AddProduct from './components/admin/AddProduct';
 
 const App = () => {
   return (
@@ -25,10 +31,13 @@ const App = () => {
         <Route path='/products' element={<ProductPage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/cart' element={<CartBody />} />
         <Route path='/featured' element={<Featured />} />
         <Route path='/contact-us' element={<ContactUs />} />
-        <Route path='cart/check-out' element={<CheckOut />} />
+        <Route path='/checkout' element={<CheckOut />} />
+        <Route path='/all-products' element={<AllProducts />} />
+        <Route path='/payment' element={<h1>Stripe Payment</h1>} />
+        <Route path='/add-product' element={<AddProduct />} />
       </Routes>
       <Footer />
     </div>

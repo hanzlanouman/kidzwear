@@ -7,15 +7,22 @@ import {
   CardFooter,
   Rating,
 } from '@material-tailwind/react';
+import React, { useContext } from 'react';
+import { CartContext } from '../contexts/Cart.context';
 import { Link } from 'react-router-dom';
 
 export default function ProductCard(props) {
   const { product } = props;
+  const { setCart } = useContext(CartContext);
+
+  const updateCart = (product, quantity) => {
+    setCart(product);
+  };
   return (
     <>
       <Card
         key={product.id}
-        className='mb-10 border-gray-500 w-full sm:w-[22rem]  h-full cursor-pointer rounded-none shadow-l bg-white'
+        className='mx-auto border-gray-500 w-full sm:w-[22rem]  h-full cursor-pointer rounded-none shadow-l bg-white'
       >
         <Link
           to={`/product-description/${product.id}`}
@@ -42,13 +49,19 @@ export default function ProductCard(props) {
               >
                 {product.name}
               </Typography>
-              <Rating value={4} readonly className='' />
-              <Typography color='red' className='text-center font-bold'>
-                ${product.price.toFixed(2)}
+              <Rating value={product.rating} readonly className='mt-2' />
+              <Typography color='red' className='text-center font-bold mt-2'>
+                Rs. {product.price.toFixed(2)}
               </Typography>
             </div>
           </CardBody>
         </Link>
+        <Button
+          className='bg-gray-900 rounded-none'
+          onClick={(e) => updateCart(product)}
+        >
+          Add to Cart
+        </Button>
       </Card>
     </>
   );
