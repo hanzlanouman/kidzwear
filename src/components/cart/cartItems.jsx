@@ -3,7 +3,7 @@ import { CartContext } from '../../contexts/Cart.context';
 import { Button } from '@material-tailwind/react';
 
 const CartItems = () => {
-  const { cart, cartTotal, setCart, removeItem } = useContext(CartContext);
+  const { cart, cartTotal, removeItem } = useContext(CartContext);
   const handleRemoveItem = (item) => {
     removeItem(item);
   };

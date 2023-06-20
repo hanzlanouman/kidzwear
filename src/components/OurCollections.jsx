@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardHeader } from '@material-tailwind/react';
-import { useState } from 'react';
+// import { Card, CardHeader } from '@material-tailwind/react';
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CollectionCard from './CollectionCard';
 

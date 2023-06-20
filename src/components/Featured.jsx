@@ -1,6 +1,5 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import { useState } from 'react';
 import { useContext } from 'react';
 import { ProductContext } from '../contexts/Product.context';
 const Featured = () => {

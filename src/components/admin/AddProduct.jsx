@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { addProducts } from '../../Services/api';
-import { STORE_DATA } from '../../STORE_DATA';
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
@@ -44,21 +43,21 @@ const AddProduct = () => {
     });
   };
 
-  const handleImageChange = (e) => {
-    handleChange(e);
-    const img = e.target.files[0];
-    // Convert file to base64 string
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setFormData((prevData) => ({
-        ...prevData,
-        image: reader.result,
-      }));
-      console.log(typeof reader.result);
-    };
-    reader.readAsDataURL(img);
-    e.target.value = null;
-  };
+  // const handleImageChange = (e) => {
+  //   handleChange(e);
+  //   const img = e.target.files[0];
+  //   // Convert file to base64 string
+  //   const reader = new FileReader();
+  //   reader.onloadend = () => {
+  //     setFormData((prevData) => ({
+  //       ...prevData,
+  //       image: reader.result,
+  //     }));
+  //     console.log(typeof reader.result);
+  //   };
+  //   reader.readAsDataURL(img);
+  //   e.target.value = null;
+  // };
 
   // const loadData = (e) => {
   //   e.preventDefault();

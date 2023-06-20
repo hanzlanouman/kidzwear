@@ -4,7 +4,6 @@ import {
   CardBody,
   Typography,
   Button,
-  CardFooter,
   Rating,
 } from '@material-tailwind/react';
 import React, { useContext } from 'react';

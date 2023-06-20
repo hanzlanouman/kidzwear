@@ -1,6 +1,6 @@
-import { Carousel, Typography } from '@material-tailwind/react';
+import { Carousel } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import carImage from '../products/kidsCollection1.jpg';
 
 export default function MainCarousel() {

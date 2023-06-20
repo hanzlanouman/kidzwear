@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { ProductContext } from '../contexts/Product.context';
 
 const Sale = () => {

@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../contexts/Cart.context';
 import CartItems from './cart/cartItems';
 import { Button } from '@material-tailwind/react';
 import { useNavigate } from 'react-router-dom';
-import CartBody from './cart/cartBody';
 
 const CheckOut = () => {
-  const { cart, cartTotal } = useContext(CartContext);
+  // const { cart, cartTotal } = useContext(CartContext);
   const navigate = useNavigate();
 
   return (

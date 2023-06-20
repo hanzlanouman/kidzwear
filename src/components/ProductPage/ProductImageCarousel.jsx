@@ -1,4 +1,4 @@
-import { Carousel, Typography } from '@material-tailwind/react';
+import { Carousel } from '@material-tailwind/react';
 import { useState, useEffect } from 'react';
 
 export default function ProductImageCarousel(props) {
@@ -13,11 +13,11 @@ export default function ProductImageCarousel(props) {
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [allImages.length]);
 
   return (
     <Carousel
-      className='h-[35rem] relative w-full sm: w-[49vw] '
+      className='h-[35rem] relative w-full '
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className='absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2'>
           {new Array(length).fill('').map((_, i) => (
@@ -35,7 +35,11 @@ export default function ProductImageCarousel(props) {
       onChange={(index) => setActiveIndex(index)}
     >
       {allImages.map((image) => (
-        <img src={image} alt={`image`} className='h-full w-full object-cover' />
+        <img
+          src={image}
+          alt={`imagehere`}
+          className='h-full w-full object-cover'
+        />
       ))}
     </Carousel>
   );

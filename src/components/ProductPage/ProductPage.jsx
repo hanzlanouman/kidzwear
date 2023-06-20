@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
-import BreadCrumbs from '../BreadCrumbs';
 import ProductImageCarousel from './ProductImageCarousel';
 import { CartContext } from '../../contexts/Cart.context';
-import Cart from '../cart/cart';
 import MoreDescription from './MoreDescription';
 import { Select, Option } from '@material-tailwind/react';
 const ProductDescription = () => {

@@ -7,15 +7,12 @@ import ProductDescription from './components/ProductPage/ProductPage';
 import ProductPage from './components/ProductsPage';
 import Login from './components/forms/Login';
 import SignUp from './components/forms/SignUp';
-import Cart from './components/cart/cart';
 import Featured from './components/Featured';
 import ContactUs from './components/forms/ContactUs';
 import CheckOut from './components/CheckOut';
 import AllProducts from './components/AllProducts';
-import Payment from './components/forms/payment';
 import CartBody from './components/cart/cartBody';
-import Logo from './components/constants/Logo';
-import { Navbar } from '@material-tailwind/react';
+
 import AddProduct from './components/admin/AddProduct';
 
 const App = () => {
