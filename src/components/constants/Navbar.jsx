@@ -75,6 +75,8 @@ const Navbar = () => {
           onClick={(e) => navigate('/login')}
           cursor={'pointer'}
         />
+
+        <Link to='/add-product'>Add Products</Link>
       </div>
     </nav>
   );
