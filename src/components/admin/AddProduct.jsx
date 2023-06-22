@@ -26,6 +26,7 @@ const AddProduct = () => {
   };
 
   const handleSubmit = (e) => {
+    console.log('Clicked');
     e.preventDefault();
     alert('Product added successfully');
     addProducts(formData);

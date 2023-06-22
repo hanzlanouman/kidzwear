@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Card,
   Input,
@@ -7,22 +7,22 @@ import {
   Typography,
 } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
+import { signUp } from '../../Services/api';
 
 export default function SignUp() {
-  const nameRef = useRef(null);
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    const nameValue = nameRef.current.value;
-    const emailValue = emailRef.current.value;
-    const passwordValue = passwordRef.current.value;
-
-    console.log('Name:', nameValue);
-    console.log('Email:', emailValue);
-    console.log('Password:', passwordValue);
+    signUp(user);
   };
 
   return (
@@ -39,13 +39,27 @@ export default function SignUp() {
           onSubmit={submitHandler}
         >
           <div className='mb-4 flex flex-col gap-6'>
-            <Input size='lg' label='Name' ref={nameRef} />
-            <Input size='lg' label='Email' ref={emailRef} />
+            <Input
+              size='lg'
+              label='Name'
+              name='name'
+              value={user.name}
+              onChange={handleChange}
+            />
+            <Input
+              size='lg'
+              label='Email'
+              name='email'
+              value={user.email}
+              onChange={handleChange}
+            />
             <Input
               type='password'
               size='lg'
               label='Password'
-              ref={passwordRef}
+              name='password'
+              value={user.password}
+              onChange={handleChange}
             />
           </div>
           <Checkbox
