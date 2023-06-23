@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000';
+const url = 'https://kidz-wear-d0f7085cd29e.herokuapp.com';
 
 export const addProducts = async (product) => {
   console.log(product);
