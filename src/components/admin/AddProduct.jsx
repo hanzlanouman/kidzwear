@@ -3,17 +3,22 @@ import { addProducts } from '../../Services/api';
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
-    id: '',
     name: '',
     price: 0,
     description: '',
-    image: '',
+    image: {},
     category: '',
     quantity: 0,
     collection: '',
     rating: 0,
     sale: null,
   });
+  const [uploadedFile, setUploadedFile] = useState();
+
+  const handleImageChange = (e) => {
+    const img = e.target.files[0];
+    setUploadedFile(img);
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -26,10 +31,17 @@ const AddProduct = () => {
   };
 
   const handleSubmit = (e) => {
-    console.log('Clicked');
     e.preventDefault();
+    const data = new FormData();
+
+    Object.keys(formData).forEach((key) => {
+      data.append(key, formData[key]);
+    });
+
+    data.append('image', uploadedFile);
+    addProducts(data);
     alert('Product added successfully');
-    addProducts(formData);
+
     setFormData({
       id: '',
       name: '',
@@ -189,6 +201,21 @@ const AddProduct = () => {
           value={formData.quantity}
           onChange={handleChange}
           required
+        />
+      </div>
+      <div className='mb-4'>
+        <label
+          className='block text-gray-700 text-sm font-bold mb-2'
+          htmlFor='quantity'
+        >
+          Quantity
+        </label>
+        <input
+          className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+          type='file'
+          id='image'
+          name='image'
+          onChange={handleImageChange}
         />
       </div>
       <div className='mb-4'>

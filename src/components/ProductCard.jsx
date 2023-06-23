@@ -49,9 +49,9 @@ export default function ProductCard(props) {
                 {product.name}
               </Typography>
               <Rating value={product.rating} readonly className='mt-2' />
-              <Typography color='red' className='text-center font-bold mt-2'>
+              {/* <Typography color='red' className='text-center font-bold mt-2'>
                 Rs. {product.price.toFixed(2)}
-              </Typography>
+              </Typography> */}
             </div>
           </CardBody>
         </Link>
