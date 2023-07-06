@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { addProducts } from '../../Services/api';
 
 const AddProduct = () => {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
+    id: '',
     name: '',
     price: 0,
     description: '',
@@ -12,7 +13,11 @@ const AddProduct = () => {
     collection: '',
     rating: 0,
     sale: null,
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [user, setUser] = useState(localStorage.getItem('token'));
+  console.log(user);
   const [uploadedFile, setUploadedFile] = useState();
 
   const handleImageChange = (e) => {
@@ -42,59 +47,10 @@ const AddProduct = () => {
     addProducts(data);
     alert('Product added successfully');
 
-    setFormData({
-      id: '',
-      name: '',
-      price: 0,
-      description: '',
-      image: '',
-      category: '',
-      quantity: 0,
-      collection: '',
-      rating: 0,
-      sale: 'no',
-    });
+    setFormData(initialFormData);
   };
 
-  // const handleImageChange = (e) => {
-  //   handleChange(e);
-  //   const img = e.target.files[0];
-  //   // Convert file to base64 string
-  //   const reader = new FileReader();
-  //   reader.onloadend = () => {
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       image: reader.result,
-  //     }));
-  //     console.log(typeof reader.result);
-  //   };
-  //   reader.readAsDataURL(img);
-  //   e.target.value = null;
-  // };
-
-  // const loadData = (e) => {
-  //   e.preventDefault();
-  //   STORE_DATA.map((item) => {
-  //     let formData = {
-  //       id: item.id,
-  //       name: item.name,
-  //       price: item.price,
-  //       description: item.description,
-  //       image: item.image,
-  //       allImages: item.allImages,
-  //       category: item.category,
-  //       quantity: item.quantity,
-  //       collection: item.collection,
-  //       rating: item.rating,
-  //       sale: item.sale,
-  //       featured: item.featured,
-  //     };
-  //     addProducts(formData);
-  //   });
-  // };
-
-  return (
-    // <button onClick={loadData}>Click</button>
+  return user ? (
     <form
       onSubmit={handleSubmit}
       className='w-full max-w-md mx-auto my-20 border border-gray-100 rounded shadow-md p-20 bg-gray-100'
@@ -269,6 +225,8 @@ const AddProduct = () => {
         </button>
       </div>
     </form>
+  ) : (
+    <h1>Please Login to Continue</h1>
   );
 };
 

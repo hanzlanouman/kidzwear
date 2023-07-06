@@ -16,7 +16,7 @@ const ProductDescription = () => {
   return (
     <div>
       <div className='flex flex-col mb-20 mt-0 sm:flex-row w-full'>
-        <ProductImageCarousel allImages={product.allImages} />
+        <ProductImageCarousel allImages={product.image} />
         <div className='w-full md:w-1/2 ml-20'>
           <h1 className='text-4xl font-bold mt-8 mb-12'>{product.name}</h1>
           <p className='text-2xl text-teal-400 font-semibold mt-8 mb-12'>

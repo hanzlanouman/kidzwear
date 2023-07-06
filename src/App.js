@@ -12,8 +12,11 @@ import ContactUs from './components/forms/ContactUs';
 import CheckOut from './components/CheckOut';
 import AllProducts from './components/AllProducts';
 import CartBody from './components/cart/cartBody';
+import Payments from './components/forms/Payments';
 
 import AddProduct from './components/admin/AddProduct';
+import Easypaisa from './components/forms/Easypaisa';
+import Jazzcash from './components/forms/Jazzcash';
 
 const App = () => {
   return (
@@ -33,7 +36,10 @@ const App = () => {
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/checkout' element={<CheckOut />} />
         <Route path='/all-products' element={<AllProducts />} />
-        <Route path='/payment' element={<h1>Stripe Payment</h1>} />
+        <Route path='/payment' element={<Payments />} />
+        <Route path='/payment/easypaisa' element={<Easypaisa />} />
+        <Route path='payment/jazzcash' element={<Jazzcash />} />
+
         <Route path='/add-product' element={<AddProduct />} />
       </Routes>
       <Footer />

@@ -22,6 +22,7 @@ export default function SignUp() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log(user);
     signUp(user);
   };
 

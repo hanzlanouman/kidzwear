@@ -13,6 +13,7 @@ const AllProducts = () => {
     page = 'All Products';
   }
 
+
   return (
     <div className='mb-20'>
       <h1 className='text-4xl font-semibold text-center my-14'>{page}</h1>

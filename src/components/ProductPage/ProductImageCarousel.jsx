@@ -34,13 +34,11 @@ export default function ProductImageCarousel(props) {
       activeIndex={activeIndex}
       onChange={(index) => setActiveIndex(index)}
     >
-      {allImages.map((image) => (
-        <img
-          src={image}
-          alt={`imagehere`}
-          className='h-full w-full object-cover'
-        />
-      ))}
+      <img
+        src={allImages}
+        alt={`imagehere`}
+        className='h-full w-full object-cover'
+      />
     </Carousel>
   );
 }

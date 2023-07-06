@@ -17,6 +17,7 @@ export default function ProductCard(props) {
   const updateCart = (product, quantity) => {
     setCart(product);
   };
+  console.log(product.image);
   return (
     <>
       <Card
@@ -49,9 +50,10 @@ export default function ProductCard(props) {
                 {product.name}
               </Typography>
               <Rating value={product.rating} readonly className='mt-2' />
-              {/* <Typography color='red' className='text-center font-bold mt-2'>
-                Rs. {product.price.toFixed(2)}
-              </Typography> */}
+              <Typography color='red' className='text-center font-bold mt-2'>
+                Rs.{' '}
+                {product.price === undefined ? 'Price Not Set' : product.price}
+              </Typography>
             </div>
           </CardBody>
         </Link>
